@@ -1,4 +1,6 @@
 import streamlit as st
+st.set_option('server.fileWatcherType', 'none')
+
 from agents.fetch_news import fetch_news
 from agents.summarizaton import summarization
 from agents.sentiment import analyze_sentiment

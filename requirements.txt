@@ -2,3 +2,7 @@ streamlit
 gemini
 requests
 transformers
+dotenv
+os
+json
+requests

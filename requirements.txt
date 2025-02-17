@@ -4,4 +4,4 @@ transformers
 python-dotenv
 requests
 tensorFlow
-Pytorch
+torch

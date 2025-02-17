@@ -1,8 +1,6 @@
 streamlit
-gemini
 requests
 transformers
-dotenv
-os
-json
+python-dotenv
 requests
+

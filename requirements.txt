@@ -3,6 +3,4 @@ requests
 transformers
 python-dotenv
 requests
-tensorFlow
-tf-keras
 torch

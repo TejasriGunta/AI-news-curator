@@ -1,5 +1,5 @@
 import streamlit as st
-
+from datetime import datetime
 from agents.fetch_news import fetch_news
 from agents.summarizaton import summarization
 from agents.sentiment import analyze_sentiment
@@ -9,7 +9,8 @@ st.title("AI-Powered Personalized News Curator")
 
 # User Preferences
 topic = st.text_input("Enter a topic")
-source = st.text_input("Enter preferred source (optional)")
+from_date = st.date_input("From Date", datetime.today())
+to_date = st.date_input("To Date", datetime.today())
 sentiment=st.radio("Filter articles by sentiment:", ["All", "Positive", "Negative"])
 
 # Initialize session state for articles
@@ -17,7 +18,7 @@ if "articles" not in st.session_state:
     st.session_state.articles = []
 
 if st.button("Fetch and Curate News"):
-    st.session_state.articles = fetch_news(topic)
+    st.session_state.articles = fetch_news(topic,from_date,to_date)
     st.session_state.articles = filter_senti(st.session_state.articles, sentiment)
 
 for index, article in enumerate(st.session_state.articles[:5]):
